@@ -20,6 +20,6 @@ export const Grid = () => {
   ) 
 };
 
-const SquareImage = ({ src }) => {
+const SquareImage = ({ src }: {src: string}) => {
   return <Image src={src} alt="empty square" width="12" height="12" />;
 };
