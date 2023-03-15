@@ -1,27 +1,3 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
-
-.hand-drawn-line {
-    width: 200px;
-    height: 5px;
-    background-color: #333;
-    position: relative;
-  }
-  
-  .hand-drawn-line::before,
-  .hand-drawn-line::after {
-    content: "";
-    position: absolute;
-    top: 0;
-    left: 0;
-    height: 100%;
-    border-top: 5px dashed #333;
-    transform-origin: 0 100%;
-    transform: rotate(-2deg);
-  }
-  
-  .hand-drawn-line::after {
-    border-top: 5px dotted #333;
-    transform: rotate(2deg);
-  }
