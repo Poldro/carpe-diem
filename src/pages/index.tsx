@@ -12,8 +12,11 @@ const Home: NextPage = () => {
   const [startDate, setStartDate] = useState(new Date());
   const now = new Date();
   
-  const weeksBetweenDates = Math.floor((now.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 7));
-  
+  const weeksfromBorn = Math.floor((now.getTime() - startDate.getTime()) / (1000 * 60 * 60 * 24 * 7));
+  const weeksInNintyYears = 4680
+
+  const weeksLeft = weeksInNintyYears - weeksfromBorn;
+
   return (
     <>
       <Head>
@@ -22,11 +25,9 @@ const Home: NextPage = () => {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="flex min-h-screen flex-col items-center justify-center">
-        <div className="container flex flex-col items-center justify-center gap-12 px-4 py-16 ">
           <MyDatePicker startDate={startDate} setStartDate={setStartDate} />
-          <Grid />
-          <AuthShowcase />
-        </div>
+          <Grid weeksfromBorn={weeksfromBorn} weeksLeft={weeksLeft} />
+
 
       </main>
     </>
